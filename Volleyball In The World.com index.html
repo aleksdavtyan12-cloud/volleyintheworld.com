@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Updated Menu Design: Side Navigation Menu */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #74b9ff, #0984e3);
+            color: #f6f3f3;
+        }
+
+        /* Side Menu */
+        .side-menu {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.9);
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+            backdrop-filter: blur(10px);
+        }
+        .side-menu a {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            color: white;
+            display: block;
+            transition: 0.3s;
+            background: linear-gradient(45deg, #ff6b6b, #feca57);
+            margin: 10px 0;
+            border-radius: 0 25px 25px 0;
+            font-weight: bold;
+        }
+        .side-menu a:hover {
+            background: linear-gradient(45deg, #feca57, #ff6b6b);
+            transform: translateX(10px);
+        }
+        .side-menu .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+        }
+
+        /* Menu Button */
+        .menu-btn {
+            font-size: 30px;
+            cursor: pointer;
+            background: linear-gradient(45deg, #ff6b6b, #feca57);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 25px;
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 2;
+            transition: all 0.3s ease;
+        }
+        .menu-btn:hover {
+            background: linear-gradient(45deg, #feca57, #ff6b6b);
+            transform: scale(1.1);
+        }
+
+        /* Overlay */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: none;
+            z-index: 0;
+        }
+
+        /* Main content */
+        .main {
+            transition: margin-left 0.5s;
+            padding: 16px;
+            margin-left: 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .side-menu {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <button class="menu-btn" onclick="openNav()"><i class="fas fa-bars"></i></button>
+    <div id="mySidenav" class="side-menu">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="#introduction"><i class="fas fa-info-circle"></i> Introduction</a>
+        <a href="#developed-volleyball"><i class="fas fa-globe"></i> Developed Volleyball</a>
+        <a href="#aquatic-volleyball"><i class="fas fa-water"></i> Aquatic Volleyball</a>
+        <a href="#beach-volleyball"><i class="fas fa-umbrella-beach"></i> Beach Volleyball</a>
+        <a href="#snow-volleyball"><i class="fas fa-snowflake"></i> Snow Volleyball</a>
+        <a href="#classic-volleyball"><i class="fas fa-volleyball-ball"></i> Classic Volleyball</a>
+        <a href="#conclusion"><i class="fas fa-check-circle"></i> Conclusion</a>
+        <a href="#position-and-players"><i class="fas fa-users"></i> Positions & Players</a>
+    </div>
+    <div class="overlay" id="overlay" onclick="closeNav()"></div>
+    <div class="main">
+       
+        <!-- Rest of your content here -->
+    </div>
+
+    <script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+            document.getElementById("overlay").style.display = "block";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+            document.getElementById("overlay").style.display = "none";
+        }
+    </script>
+</body>
+</html>
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volleyball In The World</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- For icons -->
+    <style>
+        
+        /* General Styles */
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #74b9ff, #0984e3); /* Creative gradient background */
+            color: #f6f3f3;
+            animation: backgroundShift 10s ease-in-out infinite alternate; /* Subtle background animation */
+        }
+        @keyframes backgroundShift {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 100% 50%; }
+        }
+        h1, h2, h3 {
+            color: #f8fafa;
+            text-shadow: 2px 2px 4px rgba(209, 110, 202, 0.527);
+        }
+        h1 {
+            background: linear-gradient(45deg, #00cec9, #55a3ff);
+            color: white;
+            padding: 30px;
+            text-align: center;
+            margin: 0;
+            font-size: 2.5em;
+            animation: titleBounce 2s ease-in-out;
+        }
+        @keyframes titleBounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+        h2 {
+            border-bottom: 3px solid #2ec3c0;
+            padding-bottom: 10px;
+            margin-top: 40px;
+            position: relative;
+        }
+        h2::before {
+            content: ""; /* Volleyball emoji for creativity */
+            position: absolute;
+            left: -30px;
+            top: 0;
+        }
+        h3 {
+            color: #3128d286;
+            animation: fadeInUp 1s ease-out;
+        }
+        p {
+            margin-bottom: 20px;
+            animation: fadeIn 1.5s ease-out;
+        }
+        strong {
+            color: #fcfefe;
+        }
+        ul, ol {
+            margin-left: 20px;
+            animation: slideInLeft 1s ease-out;
+        }
+        li {
+            margin-bottom: 10px;
+            transition: transform 0.3s ease;
+        }
+        li:hover {
+            transform: translateX(10px);
+        }
+
+        /* Container for content */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Introduction and sections */
+        #introduction, #Developed\ Volleyball, #Aquatic\ Volleyball, #Beach\ Volleyball, #Snow\ Volleyball, #Classic\ Volleyball, #conclusion, #Position\ and\ Players {
+            background-color: rgba(24, 161, 235, 0.486);
+            padding: 30px;
+            margin-bottom: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(252, 251, 251, 0.2);
+            backdrop-filter: blur(10px);
+            animation: sectionFadeIn 1s ease-out;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        #introduction, #Developed\ Volleyball, #Aquatic\ Volleyball, #Beach\ Volleyball, #Snow\ Volleyball, #Classic\ Volleyball, #conclusion, #Position\ and\ Players:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(254, 189, 189, 0.3);
+        }
+        @keyframes sectionFadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Media elements */
+        iframe, img {
+            display: block;
+            margin: 20px auto;
+            border-radius: 15px;
+            max-width: 100%;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        iframe:hover, img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(249, 247, 247, 0.3);
+        }
+        img {
+            width: 100%;
+            height: auto;
+        }
+
+        /* Lists */
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        ul li::before {
+            content: "⚡"; /* Creative bullet */
+            margin-right: 10px;
+        }
+        ol {
+            list-style-type: decimal;
+        }
+
+        /* Center elements */
+        center {
+            display: block;
+            text-align: center;
+        }
+
+        /* FIVB Link Styling */
+        .fivb-link {
+            display: inline-block;
+            background: linear-gradient(45deg, #ff6b6b, #feca57);
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            font-size: 1.1em;
+            box-shadow: 0 5px 15px rgba(248, 247, 247, 0.2);
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+        .fivb-link:hover {
+            background: linear-gradient(45deg, #feca57, #ff6b6b);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(253, 252, 252, 0.3);
+        }
+        @keyframes pulse {
+            0% { box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); }
+            50% { box-shadow: 0 5px 20px rgba(255, 107, 107, 0.5); }
+            100% { box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); }
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            iframe, img {
+                width: 100%;
+                height: auto;
+            }
+            h1 {
+                font-size: 2em;
+            }
+            .fivb-link {
+                padding: 12px 25px;
+                font-size: 1em;
+            }
+        }
+
+        /* Additional creative elements */
+        .icon {
+            font-size: 1.5em;
+            margin-right: 10px;
+        }
+        .fadeIn {
+            animation: fadeIn 1s ease-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes slideInLeft {
+            from { opacity: 0; transform: translateX(-20px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+    </style>
+</head>
+<body>
+    <h1><i class="fas fa-volleyball-ball icon"></i>Volleyball In The World</h1>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'none'; style-src 'self' https://cdnjs.cloudflare.com; img-src 'self' https:; font-src 'self' https://cdnjs.cloudflare.com; object-src 'none'; base-uri 'self'; form-action 'none';">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta name="referrer" content="no-referrer">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Volleyball In The World</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-fWJvX2rjUaTnsTfG4xUbGw3aAZpYz5CLavB6wlhFT8n2w2nuJObn7O6cN6/6l5zQ7RGCfdqSfHjzFZPqQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <style>
+        /* Creative Global Styles */
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #667eea 0%, #2196e4 100%);
+            color: #f9f7f7;
+            overflow-x: hidden;
+            position: relative;
+        }
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.pexels.com/photos/1263426/pexels-photo-1263426.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1') no-repeat center center fixed;
+            background-size: cover;
+            opacity: 0.1;
+            z-index: -1;
+            animation: parallax 20s ease-in-out infinite alternate;
+        }
+        @keyframes parallax {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-10px); }
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(45deg, rgba(0, 206, 201, 0.8), rgba(85, 163, 255, 0.8)), url('https://images.pexels.com/photos/1263426/pexels-photo-1263426.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1') no-repeat center center;
+            background-size: cover;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+            animation: heroFadeIn 2s ease-out;
+        }
+        @keyframes heroFadeIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        .hero h1 {
+            font-size: 3em;
+            margin: 0;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.5);
+            animation: bounceIn 1s ease-out;
+        }
+        @keyframes bounceIn {
+            0% { transform: scale(0.3); opacity: 0; }
+            50% { transform: scale(1.05); }
+            70% { transform: scale(0.9); }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        .hero p {
+            font-size: 1.2em;
+            margin-top: 20px;
+        }
+
+        /* Navigation */
+        nav {
+            position: sticky;
+            top: 0;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            padding: 15px 0;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+        nav a {
+            color: white;
+            margin: 0 20px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 50%;
+            background-color: #00cec9;
+            transition: width 0.3s ease, left 0.3s ease;
+        }
+        nav a:hover::after, nav a:focus::after {
+            width: 100%;
+            left: 0;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+
+        /* Sections */
+        section {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(15px);
+            animation: slideUp 1s ease-out;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        section:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+        }
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Typography */
+        h1, h2, h3 {
+            color: #2d3436;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        h2 {
+            border-bottom: 4px solid #00cec9;
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        h2::before {
+            content: "";
+            position: absolute;
+            left: -38px;
+            top: 0;
+            font-size: 1.1em;
+        }
+        h3 {
+            color: #e17055;
+            animation: fadeInUp 1s ease-out;
+        }
+        p {
+            margin-bottom: 20px;
+            animation: fadeIn 1.5s ease-out;
+        }
+        strong {
+            color: #2d3436;
+        }
+
+        /* Lists */
+        ul, ol {
+            margin-left: 20px;
+            animation: slideInLeft 1s ease-out;
+        }
+        li {
+            margin-bottom: 15px;
+            transition: transform 0.3s ease;
+        }
+        li:hover {
+            transform: translateX(15px);
+        }
+        ul li::before {
+            content: "⚡";
+            margin-right: 10px;
+            color: #feca57;
+        }
+
+        /* Media */
+        img, iframe {
+            display: block;
+            margin: 20px auto;
+            border-radius: 15px;
+            max-width: 100%;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        img:hover, iframe:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            background: linear-gradient(45deg, #ff6b6b, #feca57);
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 1.1em;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+        .btn:hover {
+            background: linear-gradient(45deg, #feca57, #ff6b6b);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+        @keyframes pulse {
+            0% { box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); }
+            50% { box-shadow: 0 5px 20px rgba(255, 107, 107, 0.5); }
+            100% { box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); }
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(0, 0, 0, 0.9);
+            color: white;
+            text-align: center;
+            padding: 30px;
+            margin-top: 50px;
+        }
+        footer a {
+            color: #00cec9;
+            text-decoration: none;
+            margin: 0 15px;
+            transition: color 0.3s ease;
+        }
+        footer a:hover {
+            color: #feca57;
+        }
+
+        /* Floating Elements */
+        .floating-ball {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            font-size: 3em;
+            animation: float 4s ease-in-out infinite;
+            z-index: 999;
+            opacity: 0.8;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+                grid-template-columns: 1fr;
+            }
+            .hero {
+                padding: 50px 20px;
+            }
+            .hero h1 {
+                font-size: 2em;
+            }
+            nav a {
+                display: block;
+                margin: 10px 0;
+            }
+            section {
+                padding: 20px;
+            }
+        }
+
+        /* Additional Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes slideInLeft {
+            from { opacity: 0; transform: translateX(-30px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        
+        <p>Discover the thrill of volleyball – from classic courts to exotic variants!</p>
+    </div>
+    
+    <div class="container">
+        <div id="introduction">
+            <h2>About Volleyball</h2>
+            <p><strong>Volleyball is a team sport played by two teams of six players, separated by a net. The objective is to score points by hitting a ball over the net so it lands on the opponent's side of the court. Teams are allowed a maximum of three touches to return the ball. A point is scored when a team grounds the ball in the opponent's court, or if the opponent fails to return the ball legally.</strong></p>
+            <h2>History</h2>
+              <img src="https://worldkings.org/Userfiles/Upload/images/Foto_Colorida_de_William_George_Morgan.jpg " width="482" height="600"/>
+
+
+            <p>Volleyball was invented in 1895 by William G. Morgan, a physical education instructor in Holyoke, Massachusetts, USA. He created the game as a less strenuous alternative to basketball for older members of his YMCA. The original game was called "Mintonette" and was designed to be played indoors with a net and a ball. The first official game of volleyball was played on July 7, 1896, at Springfield College in Massachusetts. The sport quickly gained popularity and spread internationally, leading to the establishment of the Fédération Internationale de Volleyball (FIVB) in 1947. Volleyball has since become an Olympic sport and is played worldwide at both recreational and competitive levels.</p>
+            <h3>Species</h3>
+            <ul>
+                <li>Aquatic Volleyball</li>
+                <li>Beach Volleyball</li>
+                <li>Snow Volleyball</li>
+                <li>Classic Volleyball</li>
+            </ul>
+            <h3>Features</h3>
+            <p>Volleyball features include a team sport with six players per side on a rectangular court divided by a net, where the objective is to score points by grounding the ball on the opponent's side. Key features are the rules allowing a maximum of three touches per side, the use of various body parts to hit the ball, and specific skills like serving, passing, setting, spiking, and blocking.</p>
+        </div>
+        <div id="Developed Volleyball">
+            <h2>Developed Volleyball</h2>
+            <h3>Countries with Large Volleyball Populations</h3>
+            <ol>
+                <li>Russia</li>
+                <li>United States</li>
+                <li>Canada</li>
+                <li>Brazil</li>
+                <li>Italy</li>
+                <li>Japan</li>
+            </ol>
+            <h3>Countries with Small Volleyball Populations</h3>
+            <p>Some countries with smaller volleyball populations include Armenia, Belarus, Bulgaria, China, Finland, France, Greece, India, Japan, Nepal, Poland, Romania, Slovenia, Turkmenistan, and Uzbekistan.</p>
+            <p>For more information on international volleyball, visit the official FIVB website: <a href="https://www.fivb.com/" target="_blank" class="fivb-link">FIVB Official Site</a></p>
+        </div>
+        <div id="Aquatic Volleyball">
+            <h2>Aquatic Volleyball (water volleyball)</h2>
+            <p><strong><u>Aqua volleyball</u></strong> or <strong>water volleyball</strong> is a team sport similar to classic volleyball, but adapted for play in a pool or other body of water, typically at shallow depths. It combines elements of traditional and beach volleyball with the unique characteristics of the aquatic environment.</p>
+            <h3>Info Media</h3>
+            <img src="https://webmedia.cev.eu/media/30fndya1/_k1d5604.jpg?width=1920&v=1d8b225622dc350" alt="aquatic volleyball" width="560" height="314"/>
+            <!-- Note: Local video path removed as it won't work online. Replace with a valid URL if needed. -->
+            <!-- <iframe width="560" height="314" src="c:\Users\davit.vahradyan\Downloads\743792b3-e50a-49bb-923c-a806f908308b.mp4" frameborder="0" allowfullscreen></iframe> -->
+        </div>
+        <div id="Beach Volleyball">
+            <h2>Beach Volleyball</h2>
+            <p>Beach volleyball is a dynamic team sport played by two players per side on a sand court. A variant of indoor volleyball, it originated in the U.S. in the 1920s and became an <strong>Olympic sport in 1996.</strong> The game is won by the team that wins two out of three sets.</p>
+            <h3>Info Media</h3>
+            <img src="https://images.pexels.com/photos/1263426/pexels-photo-1263426.jpeg" alt="beach volleyball" width="560" height="314"/>
+            <!-- Note: Local video path removed as it won't work online. Replace with a valid URL if needed. -->
+            <!-- <iframe width="550" height="325" src="c:\Users\davit.vahradyan\Downloads\0c78e589-7e5b-422b-bcf4-ac33eff22b07.mp4" frameborder="0" allowfullscreen></iframe> -->
+        </div>
+        <div id="Snow Volleyball">
+            <h2>Snow Volleyball</h2>
+            <p>Snow volleyball is a winter sport variant of volleyball played on a snow-covered court, typically with three players per team. It combines elements of traditional volleyball with the unique challenges of playing in snowy and cold conditions.</p>
+            <h3>Info Media</h3>
+            <img src="https://www.snowvolleyball.com/wp-content/uploads/20180324-5-TOM_5220.jpg" alt="snow volleyball" width="560" height="314"/>
+            <!-- Note: Local video path removed as it won't work online. Replace with a valid URL if needed. -->
+            <!-- <iframe width="560" height="314" src="c:\Users\davit.vahradyan\Downloads\8bf9b58e-242a-44e2-a4cc-9d942937f5e3.mp4" frameborder="0" allowfullscreen></iframe> -->
+        </div>
+        <div id="Classic Volleyball">
+            <h2>Classic Volleyball</h2>
+            <p>Classic volleyball is a team sport played on a rectangular court divided by a net, with six players per side. The objective is to score points by grounding the ball on the opponent's side, following specific rules and using various skills like serving, passing, setting, spiking, and blocking.</p>
+            <h3>Info Media</h3>
+            <img src="https://images.volleyballworld.com/image/upload/t_editorial_landscape_12_desktop/v1757584256/fivb-prd/o96jqgexwmi4dg27gumb.png" alt="classic volleyball" width="560" height="314"/>
+            <!-- Note: Local video path removed as it won't work online. Replace with a valid URL if needed. -->
+            <!-- <iframe width="560" height="314" src="c:\Users\davit.vahradyan\Downloads\55b3273c-d711-4fc4-ad24-32fe2bfff458.mp4" frameborder="0" allowfullscreen></iframe> -->
+        </div>
+        <div id="conclusion">
+            <h2>Conclusion</h2>
+            <p>In conclusion, volleyball is a dynamic and versatile sport that has evolved into various forms to suit different environments and preferences. From the traditional indoor game to beach, aquatic, and snow volleyball, each variant offers unique challenges and excitement for players and fans alike. The sport's global popularity continues to grow, bringing people together through teamwork, competition, and the joy of the game.</p>
+        </div>
+        <div id="Position and Players">
+            <h2><center>Position</center></h2>
+            <p>In volleyball, there are six main positions on the court, each with specific roles and responsibilities:</p>
+            <ul>
+                <li><strong>Setter:</strong> The playmaker who sets up attacks by delivering accurate passes to hitters.</li>
+                <li><strong>Outside Hitter (Left Side Hitter):</strong> A primary attacker who plays on the left side of the court and is responsible for both offense and defense.</li>
+                <li><strong>Opposite Hitter (Right Side Hitter):</strong> An attacker who plays on the right side of the court, often responsible for blocking the opponent's outside hitter.</li>
+                <li><strong>Middle Blocker (Middle Hitter):</strong> A player who specializes in blocking and quick attacks from the center of the net.</li>
+                <li><strong>Libero:</strong> A defensive specialist who wears a different color jersey and cannot attack or serve but excels in passing and digging.</li>
+                <li><strong>Defensive Specialist:</strong> A player focused on defense, often substituting for front-row players to enhance back-row play.</li>
+            </ul>
+            <img src="https://bam.files.bbci.co.uk/bam/live/content/zt7kqty/large" alt="position" width="560" height="314"/>
+            <h2><center>Players</center></h2>
+            <p>Volleyball players are athletes who participate in the sport of volleyball, either at amateur or professional levels. They possess a combination of physical skills, including agility, strength, endurance, and hand-eye coordination. Players typically specialize in specific positions on the court, such as setters, hitters, blockers, liberos, and defensive specialists. They undergo rigorous training to develop their technical skills, teamwork, and strategic understanding of the game. Volleyball players compete in various formats, including indoor volleyball, beach volleyball, and other variants like aquatic and snow volleyball.</p>
+            <img src="https://sportsnscoop.com/wp-content/uploads/2024/08/Ricardo-Lucarelli-Souza-Brazil.webp " width="482" height="600"/>
+            <img src="https://images.sidearmdev.com/resize?url=https%3A%2F%2Fdxbhsrqyrr690.cloudfront.net%2Fsidearm.nextgen.sites%2Flongbeachstate.com%2Fimages%2F2025%2F5%2F11%2F70453401_DDEVIA_-00119_Nikolov_2PqBD.jpg&height=300&type=webp " width="482" height="600"/>
+            <img src="https://www.fivb.com/wp-content/uploads/2025/09/102534-1-scaled.jpeg " width="482" height="600"/>
+            <img src="https://d2779tscntxxsw.cloudfront.net/5b1de476bf2c0.png " width="482" height="600"/>
+
+
+            
+
+
+        </div>
+    </div>
+</body>
+</html>
